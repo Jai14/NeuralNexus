@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" th:href="@{/bs/css/bootstrap-grid.css}">
+    <link rel="stylesheet" th:href="@{/bs/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/bs/css/bootstrap-utilities.css}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src= th:href="@{/bs/js/bootstrap.min.js}"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/login.css" th:href="@{/css/login.css}">
+
+    <title>login</title>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-7 col-md-12 position-relative" style="height: 100vh;" id="title"> <!-- first column with 60% width on large screens, 100% on medium and below -->
+            <!-- content for first column here -->
+            <div class="title">
+                Neural<br>Nexus
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-12 position-relative"  style="height: 100vh;">
+            <!-- content for second column here -->
+            <div class="overlay"></div>
+            <div class="content d-flex flex-column w-100">
+                <div class="sign_up align-self-center flex-box-item-one mt-5">
+                    Sign In
+                </div>
+                <form class="m-5 flex-box-item-two" action="" method="get" id="creds">
+                    <div class="form-group mb-5">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control w-75 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                        border: 1px solid #928CAA;
+                        border-radius: 20px;" name="" id="" placeholder="">
+                        <div class="mt-2" id="caution">User Does'nt Exist</div>
+                    </div>
+                    <div class="form-group mb-5">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control w-75 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                        border: 1px solid #928CAA;
+                        border-radius: 20px;" name="" id="" placeholder="">
+                        <div class="mt-2" id="caution">Password mismatch</div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg  btn-light btn-block  mb-5" style="background: rgba(255, 255, 255, 0.62);
+                    border-radius: 16px; border: none; color:white " id = "btn_login">Login</button>
+                </form>
+                <a href="http://127.0.0.1:5500/nexus/signup.html" style=" color: inherit; text-decoration: none; cursor: pointer;">
+                    <div class="fs-4 mb-5 text-center" id="register">Register</div>
+                </a>
+            </div>
+        </div>
+      </div>
+</body>
+</html>
