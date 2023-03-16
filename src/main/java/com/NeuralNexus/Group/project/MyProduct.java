@@ -9,8 +9,17 @@ public class MyProduct implements Serializable{
     private float price;
     private String desc;
     private float rating;
-    //private Sting imgSrc;
+    private String imgSrc;
 
+    public MyProduct(int d, String name,float price, String desc, float rating, String imgsrc){
+        this.id = id;
+        this.desc = desc;
+        this.price = price;
+        this.rating = rating;
+        this.name = name;
+        this.imgSrc = imgsrc;
+        
+    }
     public MyProduct(int d, String name,float price, String desc, float rating){
         this.id = id;
         this.desc = desc;
@@ -18,7 +27,9 @@ public class MyProduct implements Serializable{
         this.rating = rating;
         this.name = name;
     }
-
+    public String getImgSrc() {
+        return imgSrc;
+    }
     public String getDesc() {
         return desc;
     }

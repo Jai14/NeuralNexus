@@ -21,7 +21,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <form class="nav-form-btn" action="/home" method="POST">
+                        <form class="nav-form-btn" action="/main" method="GET">
                             <button class="nav-button" >Home</button>
                         </form>
                        
@@ -44,7 +44,7 @@
                     <p>Text about the ai models and the shop. Have to figure out what to<br> put here. The text needs to be atleast this long.</p>
                 </div>
                 <div class="col-2">
-                    <img src="../images/image1.png" alt="Main_IMAGE">
+                    <img src="@{images/image1.png}" alt="Main_IMAGE">
                 </div>
             </div>  
         </div>
@@ -54,22 +54,14 @@
     <div class="products">
         <div class="small-container">
             <h2 class="title">PRODUCTS</h2>
-            <table class="table-browse-view">
-                <thead>
-                  <tr>
-                    <td>name</td>
-                    <td>price</td>
-                    <td>rating</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr th:each="product:${products}">
-                    <td th:text="${product.name}"></td>
-                    <td th:text="${product.price}"></td>
-                    <td th:text="${product.rating}"></td>
+            <table class="table-product">
+                <tr th:each="product:${products}">
+                    <td class="product" th:text="${product.name}"></td>
+                    <td class="product" th:text="${product.price}"></td>
+                    <td class="product" th:text="${product.rating}"></td>
+                    <td class="product"><img th:src="@{/images/product.imgsrc}" alt="Nothing"></td>
                     <!-- <td><a action="/view/{id}" method="GET" th:href="@{/view/{id}(id=${location.id})}">VIEW ID</a></td> -->
-                  </tr>
-                </tbody>
+                </tr>
               </table>
         </div>
     </div>

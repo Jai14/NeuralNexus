@@ -8,6 +8,6 @@ public class MyController {
 
     @GetMapping("/")
     public String example() {
-        return "signup.html";
+        return "main.html";
     }
 }
