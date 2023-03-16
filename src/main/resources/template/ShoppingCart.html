@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Cart</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/cart.css" th:href="@{/css/cart.css}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src= th:href="@{/bs/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+
+<div class="title">
+    Neural<br>Nexus
+</div>
+<div class="container mt-5">
+    <div class="row" >
+        <div  class="col-md-6 offset-md-3">
+            <h3 class ="text-center mb-4">My Cart</h3>
+            <div class= "card mb-4">
+                <div class="card-header" >
+                    Product Name
+                </div>
+                <div class="card-body">
+                    <p>Description</p>
+                    <p>Price:</p>
+                </div>
+            </div >
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    Product Name
+                </div>
+                <div class="card-body">
+                    <p>description </p>
+                    <p>Price:</p>
+                </div>
+            </div>
+            <div class="text-center">
+
+                <a href="" class="btn btn-primary mr-3">Continue Shopping</a>
+                <a href="" class="btn btn-success">Proceed to Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
