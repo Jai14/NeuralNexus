@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" th:href="@{/bs/css/bootstrap-grid.css}">
+    <link rel="stylesheet" th:href="@{/bs/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/bs/css/bootstrap-utilities.css}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src= th:href="@{/bs/js/bootstrap.min.js}"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/login.css" th:href="@{/signup.css}">
+    <title>Sign up</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 d-flex flex-column justify-content-center align-items-center">
+                <div class="sign_up mx-auto">Sign Up</div>
+                <form class="m-5 align-self-center" action="" method="get" id="creds">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group mb-5">
+                                <label for="">First name </label>
+                                <input type="Fname" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                                border: 1px solid #928CAA;
+                                border-radius: 20px;" name="" id="" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group mb-5">
+                                <label for="">Second name</label>
+                                <input type="Sname" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                                border: 1px solid #928CAA;
+                                border-radius: 20px;" name="" id="" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-5">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                        border: 1px solid #928CAA;
+                        border-radius: 20px;" name="" id="" placeholder="">
+                        <div class="mt-2" id="caution">User Exists already</div>
+                    </div>
+
+                    <div class="form-group mb-5">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                        border: 1px solid #928CAA;
+                        border-radius: 20px;" name="" id="" placeholder="">
+                    </div>
+                   
+                    <div class="form-group mb-5">
+                        <label for="">Phone</label>
+                        <input type="Phone" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                        border: 1px solid #928CAA;
+                        border-radius: 20px;" name="" id="">
+                    </div>
+                    
+                    <div class="row justify-content-center align-items-center">
+                    <button type="button" class="btn btn-lg btn-light w-25" style="background: rgba(255, 255, 255, 0.62);
+                    border-radius: 16px; border: none; color:white" id = "btn_login">Register</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+</body>
+</html>

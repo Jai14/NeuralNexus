@@ -4,6 +4,8 @@
     <meta charset='utf-8'>
     <title>Page Title</title>
     <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,17 +17,26 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="../images/logo.png" alt="LOGO" width="125px">
+                    <img th:src="@{/images/logo.png}" alt="LOGO" width="125px"/>
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">Account</a></li>
+                        <form class="nav-form-btn" action="/home" method="POST">
+                            <button class="nav-button" >Home</button>
+                        </form>
+                       
+                        <form class="nav-form-btn" action="/about" method="GET">
+                            <button class="nav-button" >About</button>
+                        </form>
+                        <form class="nav-form-btn" action="/contact" method="GET">
+                            <button class="nav-button" >Contact</button>
+                        </form>
+                        <form class="nav-form-btn" action="/account" method="GET">
+                            <button class="nav-button" >Account</button>
+                        </form>
                     </ul>
                 </nav>
-                <img src="../images/cart.png" width=25px height=25px alt="Cart_icon">
+                <img th:src="@{/images/cart.png}" width=25px height=25px alt="Cart_icon">
             </div>  
             <div class="row">
                 <div class="col-2">
@@ -39,7 +50,32 @@
         </div>
     </div>
 
+    <!------ Products Thymeleaf------>
+    <div class="products">
+        <div class="small-container">
+            <h2 class="title">PRODUCTS</h2>
+            <table class="table-browse-view">
+                <thead>
+                  <tr>
+                    <td>name</td>
+                    <td>price</td>
+                    <td>rating</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="product:${products}">
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.rating}"></td>
+                    <!-- <td><a action="/view/{id}" method="GET" th:href="@{/view/{id}(id=${location.id})}">VIEW ID</a></td> -->
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
     <!------ Products ------>
+<!-- 
     <div class="products">
         <div class="small-container">
             <h2 class="title">PRODUCTS</h2>
@@ -94,7 +130,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </body>
 </html>
