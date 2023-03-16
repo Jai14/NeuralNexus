@@ -11,16 +11,16 @@ public class MyProduct implements Serializable{
     private float rating;
     private String imgSrc;
 
-    public MyProduct(int d, String name,float price, String desc, float rating, String imgsrc){
+    public MyProduct(int id, String name,float price, String desc, float rating, String imgSrc){
         this.id = id;
         this.desc = desc;
         this.price = price;
         this.rating = rating;
         this.name = name;
-        this.imgSrc = imgsrc;
+        this.imgSrc = imgSrc;
         
     }
-    public MyProduct(int d, String name,float price, String desc, float rating){
+    public MyProduct(int id, String name,float price, String desc, float rating){
         this.id = id;
         this.desc = desc;
         this.price = price;

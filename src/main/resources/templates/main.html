@@ -44,7 +44,7 @@
                     <p>Text about the ai models and the shop. Have to figure out what to<br> put here. The text needs to be atleast this long.</p>
                 </div>
                 <div class="col-2">
-                    <img src="@{images/image1.png}" alt="Main_IMAGE">
+                    <img th:src="@{/images/image1.png}" alt="Main_IMAGE">
                 </div>
             </div>  
         </div>
@@ -56,10 +56,11 @@
             <h2 class="title">PRODUCTS</h2>
             <table class="table-product">
                 <tr th:each="product:${products}">
+                    <td class="product"><img th:src="@{/images/{source}(source=${product.imgSrc})}" alt="Nothing"></td>
                     <td class="product" th:text="${product.name}"></td>
                     <td class="product" th:text="${product.price}"></td>
                     <td class="product" th:text="${product.rating}"></td>
-                    <td class="product"><img th:src="@{/images/product.imgsrc}" alt="Nothing"></td>
+                    <td><a action="/productview/{id}" method="GET" th:href="@{/productview/{id}(id=${product.id})}" >View ID</a></td>
                     <!-- <td><a action="/view/{id}" method="GET" th:href="@{/view/{id}(id=${location.id})}">VIEW ID</a></td> -->
                 </tr>
               </table>

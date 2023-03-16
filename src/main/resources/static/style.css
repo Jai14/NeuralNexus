@@ -50,7 +50,9 @@ p{
     padding-right: 25px;
 }
 
-
+.row{
+    display: flex;
+}
 .col-2{
     flex-basis: 50%;
     min-width: 300px;
@@ -132,6 +134,15 @@ tr{
     padding: 70px;
     font-size: 20px;
     color:#555;
+    transition: 5s;
+}
+
+td img{
+    width: 100%;
+}
+
+tr:hover{
+    transform: transform translateY(-5px);
 }
 
 /*Icon Color*/
