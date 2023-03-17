@@ -29,6 +29,8 @@ public class MyCartController {
 
         MyProduct product = productRepositiory.findById(id).orElseThrow(()->new IllegalArgumentException("don't exist"));
         cart.put(id,product);
+        float total = product.getPrice()+(float) session.getAttribute("total");
+        session.setAttribute("total", total);
         session.setAttribute("cart",cart);
         model.addAttribute("product",product);
         model.addAttribute("positive",true);
@@ -42,11 +44,19 @@ public class MyCartController {
         return "ShoppingCart.html";
     }
 
+    @GetMapping("/home")
+    public String gohome(){
+        return "main.html";
+    }
+
 
     @GetMapping("/remove/{id}")
     public String removeFromCart(@PathVariable Long id, HttpSession session) {
         Map<Long, MyProduct> cart = (Map<Long, MyProduct>) session.getAttribute("cart");
+        MyProduct temp = cart.get(id);
         cart.remove(id);
+        float total = (float) session.getAttribute("total")-temp.getPrice();
+        session.setAttribute("total", total);
         session.setAttribute("cart",cart);
         return "redirect:/cart";
     }

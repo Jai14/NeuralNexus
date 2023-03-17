@@ -3,74 +3,85 @@
 <head>
 	<title>Fake Payment Page</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="css" th:href="@{/css/FakePayment.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+
 	<style>
 
 	</style>
 </head>
 
-<body>
-	<div class = "container">
-		<div class="title">
-			Neural<br>Nexus
-		</div>
+<body style = "background-color:#ebd5e5">
+<div class="header">
+	<div class="container">
+		<div class="navbar">
+			<div class="logo">
+				<img th:src="@{/images/logo.png}" alt="LOGO" width="125px"/>
+			</div>
+			<nav>
+				<ul>
+					<form class="nav-form-btn" action="/main" method="GET">
+						<button class="nav-button" >Home</button>
+					</form>
+
+					<form class="nav-form-btn" action="/about" method="GET">
+						<button class="nav-button" >About</button>
+					</form>
+					<form class="nav-form-btn" action="/account" method="GET">
+						<button class="nav-button" >Account</button>
+					</form>
+					<form class="nav-form-btn" action="/logout" method="POST">
+						<button class="nav-button" >Sign Out</button>
+					</form>
+
+				</ul>
+			</nav>
+			<img th:src="@{/images/cart.png}" width=25px height=25px alt="Cart_icon" onclick="window.location.href='/cart'"> </div>
 	</div>
-	<div class="container mt-5">
-		<div class="row">
-			<div class="col-md-6 offset-md-3">
-				<div class="card">
-					<div class="card-header">
-						<h3 class="text-center">Make a Payment</h3>
-					</div>
-					<div class="card-body">
-						<form onclick="submitPayment()">
-							<div class="form-group">
-								<label for="nameOnCard">Name on Card</label>
-								<input type="text" class="form-control"  id="nameOnCard" name="">
-							</div>
-							<div class="form-group">
-								<label for="cardNumber">Card Number</label>
-								<input type="text" class="form-control" id="cardNumber" name="">
-							</div>
-							<div class="form-group">
-								<label for="expiryDate">Expiry Date</label>
-								<input type="text"  class="form-control" id="expiryDate" name="" >
-							</div>
-							<div class="form-group">
-								<label for="cvv">CVV</label>
-								<input type="text"   class="form-control" id="cvv" name=""  >
-							</div>
-							
-							<div class="form-group" >
-								<label for="billingAddress">Billing Address</label>
-								<input type="text "  class="form-control"  id="billingAddress" name="" >
-							</div>
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input type="email"  class="form-control"  id="email" name="" >
-							</div>
-							<div class="form-group text-center">
-								<button type="submit" class="btn btn-primary">Submit Payment</button>
-							</div>
-						</form>
-					</div>
+</div>
+
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<div class="card">
+				<div class="card-header" style = "background-color:#965B7C">
+					<h2 class="text-center">Make a Payment</h2>
+					<h4 class="text-center" th:text="${total}"></h4>
+				</div>
+				<div class="card-body" style = "background-color:#F0C7BB">
+					<form>
+						<div class="form-group">
+							<label for="nameOnCard">Name on Card</label>
+							<input type="text" class="form-control"  id="nameOnCard" name="">
+						</div>
+						<div class="form-group">
+							<label for="cardNumber">Card Number</label>
+							<input type="text" class="form-control" id="cardNumber" name="">
+						</div>
+						<div class="form-group">
+							<label for="expiryDate">Expiry Date</label>
+							<input type="text"  class="form-control" id="expiryDate" name="" >
+						</div>
+						<div class="form-group">
+							<label for="cvv">CVV</label>
+							<input type="text"   class="form-control" id="cvv" name=""  >
+						</div>
+
+						<div class="form-group" >
+							<label for="billingAddress">Billing Address</label>
+							<input type="text "  class="form-control"  id="billingAddress" name="" >
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email"  class="form-control"  id="email" name="" >
+						</div>
+						<div class="form-group text-center">
+							<button onclick="alert('Payment successful!')" type="submit" class="btn btn-primary">Submit Payment</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
-<script>
-function submitPayment() {
-    // submit the form data using AJAX or fetch
-    // then show the alert message and redirect after 5 seconds
-    // using the setTimeout function
-
-    // example code for showing the alert and redirecting
-    alert("Purchase successful!");
-    setTimeout(function() {
-        window.location.replace('/home');
-    }, 5000); // 5000 milliseconds = 5 seconds
-}
-</script>
+</div>
 </body>
 </html>

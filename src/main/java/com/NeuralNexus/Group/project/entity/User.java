@@ -27,6 +27,9 @@ public class User {
     private String phone;
 
 
+    @Autowired
+    public User(){
+    }
 
     public User(String email, String password) {
         this.email = email;

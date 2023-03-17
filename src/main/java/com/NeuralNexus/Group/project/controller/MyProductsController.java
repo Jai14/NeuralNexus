@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.NeuralNexus.Group.project.entity.MyProduct;
+import com.NeuralNexus.Group.project.entity.User;
 import com.NeuralNexus.Group.project.repo.ProductRepositiory;
 import com.NeuralNexus.Group.project.repo.UserRepository;
 import com.NeuralNexus.Group.project.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,22 +28,13 @@ public class MyProductsController {
     private UserService userService;
 
 
-    //Go back About Page when Pressed
-    @GetMapping("/about")
-    public String goToAbout(){
-        return "home.html";
-    }
-
-    //Go back Contact Page when Pressed
-    @GetMapping("/contact")
-    public String goToContact(){
-        return "contact.html";
-    }
 
     //Go back Account Page when Pressed
     @GetMapping("/account")
-    public String goToAccount(){
-        return "login.html";
+    public String goToAccount(HttpSession session , Model model){
+        User account = (User) session.getAttribute("account");
+        model.addAttribute("account",account);
+        return "UserDetails.html";
     }
 
 
