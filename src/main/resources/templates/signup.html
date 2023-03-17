@@ -12,7 +12,7 @@
     <script src= th:href="@{/bs/js/bootstrap.min.js}"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/login.css" th:href="@{/css/signup.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/signup.css}">
     <title>Sign up</title>
 </head>
 <body>
@@ -21,51 +21,51 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-8 d-flex flex-column justify-content-center align-items-center">
                 <div class="sign_up mx-auto">Sign Up</div>
-                <form class="m-5 align-self-center" action="" method="get" id="creds">
+                <form class="m-5 align-self-center" action="/sign-up" method="post" id="creds">
                     <div class="row">
                         <div class="col">
                             <div class="form-group mb-5">
-                                <label for="">First name </label>
-                                <input type="Fname" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                                <label for="fname">First name </label>
+                                <input type="text" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
                                 border: 1px solid #928CAA;
-                                border-radius: 20px;" name="" id="" placeholder="">
+                                border-radius: 20px;"  name="fname"id="fname" required>
                             </div>
                         </div>
 
                         <div class="col">
                             <div class="form-group mb-5">
-                                <label for="">Second name</label>
-                                <input type="Sname" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                                <label for="sname">Second name</label>
+                                <input type="text" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
                                 border: 1px solid #928CAA;
-                                border-radius: 20px;" name="" id="" placeholder="">
+                                border-radius: 20px;" name="sname" id="sname" required>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group mb-5">
-                        <label for="">Email</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
                         border: 1px solid #928CAA;
-                        border-radius: 20px;" name="" id="" placeholder="">
-                        <div class="mt-2" id="caution">User Exists already</div>
+                        border-radius: 20px;" name="email" id="email" required>
+                        <div class="mt-2" th:if="${Perror}" id="caution">User Exists already</div>
                     </div>
 
                     <div class="form-group mb-5">
-                        <label for="">Password</label>
+                        <label for="password">Password</label>
                         <input type="password" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
                         border: 1px solid #928CAA;
-                        border-radius: 20px;" name="" id="" placeholder="">
+                        border-radius: 20px;" id="password" name="password" placeholder="Password" required>
                     </div>
-                   
+
                     <div class="form-group mb-5">
-                        <label for="">Phone</label>
-                        <input type="Phone" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
+                        <label for="phone">Phone</label>
+                        <input type="number" class="form-control w-100 mt-2" style="background: rgba(255, 255, 255, 0.62);
                         border: 1px solid #928CAA;
-                        border-radius: 20px;" name="" id="">
+                        border-radius: 20px;" name="phone" id="phone" required>
                     </div>
                     
                     <div class="row justify-content-center align-items-center">
-                    <button type="button" class="btn btn-lg btn-light w-25" style="background: rgba(255, 255, 255, 0.62);
+                    <button type="submit" class="btn btn-lg btn-light w-25" style="background: rgba(255, 255, 255, 0.62);
                     border-radius: 16px; border: none; color:white" id = "btn_login">Register</button>
                     </div>
                 </form>
