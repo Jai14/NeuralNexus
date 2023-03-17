@@ -19,6 +19,8 @@ public class MyProduct{
 
     @Column(name = "price")
     private float price;
+
+
     @Column(name = "description")
     private String description;
     @Column(name = "rating")
@@ -46,12 +48,19 @@ public class MyProduct{
 
     }
 
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getImgSrc() {
         return imgSrc;
     }
-    public String getdescription() {
-        return description;
-    }
+
     public int getId() {
         return id;
     }
@@ -73,10 +82,6 @@ public class MyProduct{
 
     public void setPrice(float price) {
         this.price = price;
-    }
-
-    public void setdescription(String description) {
-        this.description = description;
     }
 
     public void setRating(float rating) {
