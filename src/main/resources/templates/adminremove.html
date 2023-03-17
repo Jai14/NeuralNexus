@@ -44,6 +44,7 @@
         <table class="table-product">
             <tr th:each="product:${products}">
                 <td class="product"><img th:src="@{/images/{source}(source=${product.imgSrc})}" alt="Nothing"></td>
+                <td class="product" th:text="${product.name}"></td>
                 <td class="product" th:text="${product.price}"></td>
                 <td><a th:href="@{/adminremove/{id}(id=${product.id})}" >Delete</a></td>
             </tr>

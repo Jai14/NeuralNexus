@@ -53,6 +53,7 @@
         <table class="table-product">
             <tr th:each="product:${products}">
                 <td class="product"><img th:src="@{/images/{source}(source=${product.imgSrc})}" alt="Nothing"></td>
+                <td class="product" th:text="${product.name}"></td>
                 <td class="product" th:text="${product.price}"></td>
                 <td><a th:href="@{/productview/{id}(id=${product.id})}" >View</a></td>
                 <!-- <td><a action="/view/{id}" method="GET" th:href="@{/view/{id}(id=${location.id})}">VIEW ID</a></td> -->
