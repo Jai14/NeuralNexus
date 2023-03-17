@@ -60,70 +60,12 @@
                 <td class="product" th:text="${product.name}"></td>
                 <td class="product" th:text="${product.price}"></td>
                 <td class="product" th:text="${product.rating}"></td>
-                <td><a action="/productview/{id}" method="GET" th:href="@{/productview/{id}(id=${product.id})}" >View ID</a></td>
+                <td><a th:href="@{/productview/{id}(id=${product.id})}" >View ID</a></td>
                 <!-- <td><a action="/view/{id}" method="GET" th:href="@{/view/{id}(id=${location.id})}">VIEW ID</a></td> -->
             </tr>
         </table>
     </div>
 </div>
-
-<!------ Products ------>
-<!--
-    <div class="products">
-        <div class="small-container">
-            <h2 class="title">PRODUCTS</h2>
-            <div class="row">
-                <div class="col-4">
-                    <img src="../images/product-1.jpg" alt="First_model">
-                    <h4>First Model</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$50</p>
-                </div>
-                <div class="col-4">
-                    <img src="../images/product-2.jpg" alt="First_model">
-                    <h4>First Model</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$50</p>
-                </div>
-                <div class="col-4">
-                    <img src="../images/product-3.jpg" alt="First_model">
-                    <h4>First Model</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$50</p>
-                </div>
-                <div class="col-4">
-                    <img src="../images/product-4.jpg" alt="First_model">
-                    <h4>First Model</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$50</p>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
 </body>
 </html>

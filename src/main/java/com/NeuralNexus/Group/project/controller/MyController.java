@@ -27,7 +27,7 @@ public class MyController {
     public String start(HttpSession session) {
 
         if (session.getAttribute("user") != null) {
-            return "redirect:/home";
+            return "redirect:/main";
         }
         return "login.html";
 
@@ -43,10 +43,10 @@ public class MyController {
         if (userRepository.exists(Example.of(new User(email, User.hashString(password))))) {
             User user = new User (email, password);
             session.setAttribute("user", user);
-            return "main.html";
+            return "redirect:/main";
         } else {
             model.addAttribute("Perror", true);
-            return "login.html";
+            return "redirect:/";
         }
     }
 
@@ -62,10 +62,10 @@ public class MyController {
         // code to save user
         if (!userService.emailExists(user.getemail())) {
             userRepository.save(user);
-            return "main.html";
+            return "redirect:/main";
         } else {
             model.addAttribute("Perror", true);
-            return "signup.html";
+            return "redirect:/sign-up";
         }
     }
 
@@ -75,10 +75,6 @@ public class MyController {
         return "redirect:/";
     }
 
-    @GetMapping("/home")
-    public String home() {
-        return "main.html";
-    }
 
     @GetMapping("/cart")
     public  String cart(){
