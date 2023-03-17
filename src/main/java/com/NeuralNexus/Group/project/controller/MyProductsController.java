@@ -54,8 +54,9 @@ public class MyProductsController {
 
     @GetMapping("/productview/{id}")
     public String viewProduct(@PathVariable int id, Model model){
-        MyProduct product = productRepositiory.findById((long) id).orElseThrow(()->new IllegalArgumentException("fuck this"));
+        MyProduct product = productRepositiory.findById((long) id).orElseThrow(()->new IllegalArgumentException("dont exist"));
         model.addAttribute("product", product);
+        model.addAttribute("positive",false);
         return "productview.html";
     }
 

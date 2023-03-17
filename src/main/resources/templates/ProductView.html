@@ -26,15 +26,15 @@
                     <form class="nav-form-btn" action="/about" method="GET">
                         <button class="nav-button" >About</button>
                     </form>
-                    <form class="nav-form-btn" action="/contact" method="GET">
-                        <button class="nav-button" >Contact</button>
-                    </form>
                     <form class="nav-form-btn" action="/account" method="GET">
                         <button class="nav-button" >Account</button>
                     </form>
+                    <form class="nav-form-btn" action="/logout" method="POST">
+                        <button class="nav-button" >Sign Out</button>
+                    </form>
                 </ul>
             </nav>
-            <img th:src="@{/images/cart.png}" width=25px height=25px alt="Cart_icon">
+            <img th:src="@{/images/cart.png}" width=25px height=25px alt="Cart_icon" onclick="window.location.href='/cart'">
         </div>
     </div>
 </div>
@@ -63,7 +63,8 @@
                 </tr>
             </table>
         </div>
-        Add to Cart
+        <a th:if="${not positive}" th:href="@{/addcart/{id}(id=${product.id})}" }>Add to Cart</a>
+        <a th:if="${positive}">Added</a>
     </div>
 </div>
 

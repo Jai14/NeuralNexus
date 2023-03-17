@@ -76,10 +76,6 @@ public class MyController {
     }
 
 
-    @GetMapping("/cart")
-    public  String cart(){
-        return "ShoppingCart.html";
-    }
 
     @GetMapping("/payment")
     public  String payment(){
