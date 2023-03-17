@@ -1,11 +1,16 @@
 package com.NeuralNexus.Group.project.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.io.Serializable;
 
 
-public class MyProduct implements Serializable{
+@Entity
+public class MyProduct{
+
+    @Id
     private int id;
     private String name;
     private float price;
