@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class MyCartController {
@@ -24,10 +25,11 @@ public class MyCartController {
     HashMap<Long, MyProduct> cart = new HashMap<Long, MyProduct>();
 
     @GetMapping("/addcart/{id}")
-    public String addcart(@PathVariable Long id, Model model) {
+    public String addcart(@PathVariable Long id, Model model , HttpSession session) {
 
         MyProduct product = productRepositiory.findById(id).orElseThrow(()->new IllegalArgumentException("don't exist"));
         cart.put(id,product);
+        session.setAttribute("cart",cart);
         model.addAttribute("product",product);
         model.addAttribute("positive",true);
         return "ProductView.html";
@@ -38,6 +40,15 @@ public class MyCartController {
     public String cartShow(Model model){
         model.addAttribute("products",cart.values());
         return "ShoppingCart.html";
+    }
+
+
+    @GetMapping("/remove/{id}")
+    public String removeFromCart(@PathVariable Long id, HttpSession session) {
+        Map<Long, MyProduct> cart = (Map<Long, MyProduct>) session.getAttribute("cart");
+        cart.remove(id);
+        session.setAttribute("cart",cart);
+        return "redirect:/cart";
     }
 
 
