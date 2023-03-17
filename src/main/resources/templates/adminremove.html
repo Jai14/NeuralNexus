@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <title>admin remove</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img th:src="@{/images/logo.png}" alt="LOGO" width="125px"/>
+            </div>
+            <nav>
+                <ul>
+                    <form class="nav-form-btn" action="/adminhome" method="GET">
+                        <button class="nav-button" >Home</button>
+                    </form>
+
+                    <form class="nav-form-btn" action="/account" method="GET">
+                        <button class="nav-button" >Account</button>
+                    </form>
+                    <form class="nav-form-btn" action="/logout" method="POST">
+                        <button class="nav-button" >Sign Out</button>
+                    </form>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!------ Products Thymeleaf------>
+<div class="products">
+    <div class="small-container">
+        <h2 class="title">PRODUCTS</h2>
+        <table class="table-product">
+            <tr th:each="product:${products}">
+                <td class="product"><img th:src="@{/images/{source}(source=${product.imgSrc})}" alt="Nothing"></td>
+                <td class="product" th:text="${product.price}"></td>
+                <td><a th:href="@{/adminremove/{id}(id=${product.id})}" >Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
