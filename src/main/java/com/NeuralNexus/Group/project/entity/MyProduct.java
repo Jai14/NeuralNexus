@@ -1,9 +1,6 @@
 package com.NeuralNexus.Group.project.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
@@ -13,9 +10,8 @@ import java.io.Serializable;
 @Table(name="myproduct")
 public class MyProduct{
 
-
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "name")
@@ -23,11 +19,13 @@ public class MyProduct{
 
     @Column(name = "price")
     private float price;
-    @Column(name = "desc")
-    private String desc;
+    @Column(name = "description")
+    private String description;
     @Column(name = "rating")
     private float rating;
-    @Column(name = "imgsrc")
+
+
+    @Column(name ="imgsrc")
     private String imgSrc;
 
 
@@ -38,9 +36,9 @@ public class MyProduct{
 
     }
 
-    public MyProduct(int id, String name,float price, String desc, float rating, String imgSrc){
+    public MyProduct(int id, String name,float price, String description, float rating, String imgSrc){
         this.id = id;
-        this.desc = desc;
+        this.description = description;
         this.price = price;
         this.rating = rating;
         this.name = name;
@@ -51,8 +49,8 @@ public class MyProduct{
     public String getImgSrc() {
         return imgSrc;
     }
-    public String getDesc() {
-        return desc;
+    public String getdescription() {
+        return description;
     }
     public int getId() {
         return id;
@@ -68,6 +66,25 @@ public class MyProduct{
     }
     public float getRating() {
         return rating;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public void setdescription(String description) {
+        this.description = description;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+
+    public void setImgSrc(String imgSrc) {
+        this.imgSrc = imgSrc;
     }
 
 }
