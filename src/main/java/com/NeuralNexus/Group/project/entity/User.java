@@ -27,10 +27,12 @@ public class User {
     private String phone;
 
 
+
     public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
+
 
 
     public Long getId() {
@@ -49,7 +51,7 @@ public class User {
         this.fname = fname;
     }
 
-    public String sname() {
+    public String getsname() {
         return sname;
     }
 

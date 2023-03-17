@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <title>Page Title</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,21 +50,24 @@
         <p>Text about the ai models and the shop. Have to figure out what to<br> put here. The text needs to be atleast this long.</p>
         <br><br>
         <div class="row">
-            <table>
-                <tr>
-                    <td></td>
-                    <td>Untrained</td>
-                    <td>Trained</td>
-                </tr>
-                <tr>
-                    <td>Price</td>
-                    <td th:text="${product.price}"></td>
-                    <td th:text="${product.price}"></td>
-                </tr>
-            </table>
+            <div class="col-2">
+                <div class="untrained">
+                    <span><h2>Untrained</h2></span><br>
+                    <span th:text="${product.price}"></span><br>
+                    <a th:if="${not positive}" th:href="@{/addcart/{id}(id=${product.id})}"  th:class="add-cart">Add to Cart</a>
+
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="trained">
+                    <span><h2>Trained</h2></span><br>
+                    <span th:text="${product.price + 30}"></span><br>
+                    <a th:if="${not positive}" th:href="@{/addcart/{id}(id=${product.id})}"  th:class="add-cart">Add to Cart</a>
+                    <a th:if="${positive}" class="add-cart">Added</a>
+                </div>
+            </div>
         </div>
-        <a th:if="${not positive}" th:href="@{/addcart/{id}(id=${product.id})}" }>Add to Cart</a>
-        <a th:if="${positive}">Added</a>
+
     </div>
 </div>
 
