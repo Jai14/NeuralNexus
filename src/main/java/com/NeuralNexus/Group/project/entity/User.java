@@ -1,4 +1,4 @@
-package com.NeuralNexus.Group.project.controller;
+package com.NeuralNexus.Group.project.entity;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;

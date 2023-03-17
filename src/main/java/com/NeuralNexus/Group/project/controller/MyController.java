@@ -1,5 +1,8 @@
 package com.NeuralNexus.Group.project.controller;
 
+import com.NeuralNexus.Group.project.entity.User;
+import com.NeuralNexus.Group.project.repo.UserRepository;
+import com.NeuralNexus.Group.project.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -9,10 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 @Controller
 public class MyController {
@@ -35,7 +34,7 @@ public class MyController {
     }
 
 
-
+//   TODO - later
     @PostMapping("/login")
     public String login(@RequestParam(name = "email") String email,
                         @RequestParam(name = "password") String password, Model model , HttpSession session) {
